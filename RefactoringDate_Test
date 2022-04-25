@@ -1,0 +1,72 @@
+package programming_exercises;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+public class RefactoringDateTest {
+
+  RefactoringDate testing = new RefactoringDate(0);
+  int testDay = 1;
+  int testMonth = 1;
+  int testYear = 2002;
+  
+  
+  
+  
+  @Test
+  
+  public void testGetMonth() {
+    RefactoringDate date = new RefactoringDate(1, 1, 2002);
+    date.getMonth();
+    Assert.assertTrue(testing.getMonth() == testMonth);
+
+}
+  @Test
+  public void testDay() {
+    RefactoringDate testing = new RefactoringDate(testMonth, testDay, testYear);
+      Assert.assertTrue(testing.getDay() == testDay);
+  }
+
+  @Test
+  public void testYear() {
+    RefactoringDate testing = new RefactoringDate(testMonth, testDay, testYear);
+      Assert.assertTrue(testing.getYear() == testYear);
+  }
+
+  @Test
+  public void testEquals() {
+    RefactoringDate testing = new RefactoringDate(testMonth, testDay, testYear);
+
+    RefactoringDate date1 = new RefactoringDate(3, 3, 2005);
+    RefactoringDate date2 = new RefactoringDate("March", 3, 2005);
+    RefactoringDate dateDiffer = new RefactoringDate(1, 1, 2000);
+
+      assertTrue(date1.equals(date2));
+      assertFalse(date1.equals(dateDiffer));
+  }
+
+  @Test
+  public void getMonthTest() {
+
+      testing.getMonth();
+      Assert.assertEquals(2, 2);
+  }
+
+  @Test
+  public void testmonthString() {
+
+      Assert.assertTrue(testing.monthString(3).equalsIgnoreCase("March"));
+  }
+
+  @Test
+  public void testmonthOK() {
+
+      String testMonth = "July";
+
+      Assert.assertTrue(testing.monthOK(testMonth) == true);
+  }
+
+}
